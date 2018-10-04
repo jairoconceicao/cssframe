@@ -14,8 +14,11 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
+    "css-loader": "^1.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "style-loader": "^0.23.0",
+    "vanilla-framework": "^1.8.0",
     "vue-template-compiler": "^2.5.17"
   },
   "postcss": {
