@@ -14,10 +14,12 @@ export default new Router({
     {
       path: '/vanilla',
       name: 'vanilla',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Vanilla.vue')
+      component: () => import('./views/Vanilla.vue')
+    },
+    {
+      path: '/cssframe',
+      name: 'Css Frame',
+      component: () => import('./views/CssFrame.vue')
     },
     {
       path: '/about',

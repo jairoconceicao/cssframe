@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700|Oswald:300,400,700');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+$font-base-family: 'Segoe UI', 'Lucida Sans', Arial, sans-serif;
+$font-base-weight: 350;
+$font-caption-family: 'Oswald', sans-serif;
+
+$primaryColor: #000000;
+$textColor: lighten($primaryColor, 0%);
+$secondaryColor: invert($primaryColor);
+$controlColor: rgba(44, 129, 209, 0.801);
+$borderColor: lighten($controlColor, 30%);
+
+$goldNumber : 1.6180339887;
+
+$widthContainerMain: 1024px;
+
+$listMark: '\f04e';
+$listMarkColor: #8a9aaa;

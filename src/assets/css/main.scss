@@ -1,5 +1,400 @@
 // Import the framework
-@import 'node_modules/vanilla-framework/scss/vanilla';
-
+//@import '../../../node_modules/vanilla-framework/scss/vanilla';
 // Include all of Vanilla Framework
-@include vanilla;
+//@include vanilla;
+@import 'settings';
+
+html {
+  font-family: $font-base-family;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-base-family;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+button, input, textarea, table, th, td, p, span, div, ul, li, dd, ol, a, nav, header, section, aside, footer, article, label, fieldset, legend {
+  font-family: $font-base-family;
+  line-height: 100%;
+}
+
+button, input[type=button], input[type=submit], input[type=reset] {
+  border: none;
+  color:  #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-caption-family;
+
+  font-weight: 300;
+  font-size: 80%;
+
+  margin-right: 3px;
+  margin-top: 6px;
+  overflow: hidden;
+  padding: 12px (12px * $goldNumber);
+  background-color: $controlColor;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px darken($controlColor, 20%);
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    background-color: lighten($controlColor, 5%);
+    outline: solid 1px darken($borderColor, 30%);
+    text-shadow: none;
+  }
+}
+
+header {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+
+input[type], select, textarea {
+  border: solid 1px $borderColor;
+  padding: 6px 0;
+  margin-bottom: 12px;
+}
+
+input[type=text],
+input[type=password],
+input[type=tel],
+input[type=number],
+input[type=date]
+{
+  display: inline-block;
+  font-size: 100%;
+  width: 100%;
+}
+
+input[type=checkbox] {
+  font-size: 100%;
+}
+
+select {
+  display: inline-block;
+  width: 100%;
+  option {
+    font-size: 100%;
+    padding: 6px 0;
+  }
+}
+
+fieldset {
+  border: solid 1px $borderColor;
+
+  legend {
+    display: block;
+    font-family: $font-caption-family;
+    font-weight: 300;
+    font-size: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    background-color: $borderColor;
+    color: darken($controlColor, 20%);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: $font-caption-family;
+  }
+}
+
+.check-container {
+  input[type=checkbox], input[type=radio] {
+    display: inline-block;
+  }
+
+  label {
+    display: inline-block !important;
+  }
+}
+
+.page-container {
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 0;
+
+  padding-left: 6px;
+  padding-right: 6px;
+
+  max-width: 999px;
+  width: 100%;
+}
+
+.page-containter-fluid {
+  width: 100%;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.nav-horizontal {
+  background-color: lighten($controlColor, 40%);
+  display: inline-block;
+  width: 100%;
+  list-style-type:none;
+  padding:0;
+  margin:0;
+  border: solid 1px lighten($controlColor, 10%);
+
+  .nav-item {
+    list-style: none;
+    list-style-position: none;
+    display: inline-block;
+    padding: 6px 12px;
+    border-right: solid 1px lighten($controlColor, 10%);
+
+    // &:last-child {
+    //   border-right: none;
+    // }
+
+    &:hover {
+      background-color: lighten($controlColor, 35%);
+
+    }
+
+    a {
+      color: darken($controlColor, 10%);
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($controlColor, 10%);
+      }
+    }
+  }
+}
+
+.nav-vertical {
+  display: block;
+  list-style-type: none;
+  padding: 6px;
+  margin:0;
+
+  .nav-item {
+    list-style: none;
+    list-style-position: none;
+    display: block;
+    padding: 6px;
+
+    a {
+      color: darken($controlColor, 10%);
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($controlColor, 10%);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.dropdown {
+  & > a {
+    display: block;
+    &::after {
+      content: '\f078';
+      font-family: 'FontAwesome';
+      margin-left: 3px;
+    }
+  }
+
+  &:hover > .dropdown-items {
+    display: block;
+    z-index: 99999;
+    position: absolute;
+    background-color: rgba($color: lighten($controlColor, 10%), $alpha: 1.0);
+  }
+  
+  .dropdown-items {
+    display: none;
+    margin-top: 6px;
+    margin-left: -12px;
+    padding: 12px;
+
+    .nav-item a {
+      color: #fff !important;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+
+  &::after, 
+  &::before {
+    content: "";
+    display: table;
+    clear: both;  
+  }
+}
+
+.col {
+  width:100%;
+  float: left;
+  padding: 0;
+
+  label {
+    display: block;
+    font-family: $font-caption-family;
+    font-weight: 700;
+    font-size: 80%;
+    margin-bottom: 6px;
+  }
+}
+
+.col-1 {
+  @extend .col;
+}
+.col-2 {
+  @extend .col;
+}
+.col-3 {
+  @extend .col;
+}
+.col-4 {
+  @extend .col;
+}
+.col-5 {
+  @extend .col;
+}
+.col-6 {
+  @extend .col;
+}
+.col-7 {
+  @extend .col;
+}
+.col-8 {
+  @extend .col;
+}
+.col-9 {
+  @extend .col;
+}
+.col-10 {
+  @extend .col;
+}
+.col-11 {
+  @extend .col;
+}
+.col-12 {
+  @extend .col;
+}
+
+
+@media (max-width:600px){
+}
+
+@media (min-width:601px){
+  .col-1 {
+    width: 8.333333%;
+  }
+  .col-2 {
+    width: 16.666666%;
+  }
+  .col-3 {
+    width: 24.999999%;
+  }
+  .col-4 {
+    width: 33.333333%;
+  }
+  .col-5 {
+    width: 41.666666%;
+  }
+  .col-6 {
+    width: 49.999999%;
+  }
+  .col-7 {
+    width: 58.333333%;
+  }
+  .col-8 {
+    width: 66.666666%;
+  }
+  .col-9 {
+    width: 74.999999%;
+  }
+  .col-10 {
+    width: 83.333333%;
+  }
+  .col-11 {
+    width: 91.666666%;
+  }
+  .col-12 {
+    width: 99.999999%;
+  }
+}
+
+// @media (max-width:768px){
+// }
+
+
+// @media (max-width:992px){
+// }
+
+// @media (max-width:992px) and (min-width:601px){
+// }
+
+@media (min-width:993px){
+  .col-1 {
+    width: 8.333333%;
+  }
+  .col-2 {
+    width: 16.666666%;
+  }
+  .col-3 {
+    width: 24.999999%;
+  }
+  .col-4 {
+    width: 33.333333%;
+  }
+  .col-5 {
+    width: 41.666666%;
+  }
+  .col-6 {
+    width: 49.999999%;
+  }
+  .col-7 {
+    width: 58.333333%;
+  }
+  .col-8 {
+    width: 66.666666%;
+  }
+  .col-9 {
+    width: 74.999999%;
+  }
+  .col-10 {
+    width: 83.333333%;
+  }
+  .col-11 {
+    width: 91.666666%;
+  }
+  .col-12 {
+    width: 99.999999%;
+  }
+}
+
+

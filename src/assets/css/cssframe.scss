@@ -1,0 +1,88 @@
+/****************************************************************
+* CSSFrame
+*
+* Framework CSS3 fortemente baseado na semantica, flexbox e Sass
+*/
+
+//** Reset e geral
+@import 'normalize';
+@import 'settings';
+
+//** Layout
+@import 'layout';
+
+html, body {
+  font-family: $font-base-family;
+  font-weight: $font-base-weight;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: $textColor;
+}
+
+a {
+  text-decoration: none;
+  color: $controlColor;
+
+  &:hover {
+    color: darken($controlColor, 25%);
+  }
+}
+
+//** Navigations
+nav {
+  width: 100%;
+  background-color: lighten($controlColor, 40%);
+
+  a, button {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0;
+    color: inherit;
+
+    &:hover {
+      background-color: $controlColor;
+    }
+  }
+
+  select {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    -ms-appearance: menulist;
+    appearance: menulist;
+
+    background-color: lighten($controlColor, 40%);
+    border: none !important;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px !important;
+    margin: 0;
+
+    &:hover {
+      background-color: $controlColor;
+    }
+
+    option {
+      color: inherit;
+    }
+  }
+
+  &[vertical] {
+    width: 20%;
+    a, button {
+      display: block;
+      text-decoration: none;
+      padding: 6px;
+      width: 100%;
+    }
+  }
+}
+
+//** Controles (Forms)
+input[type], select, textarea {
+  padding: 6px 0;
+}
